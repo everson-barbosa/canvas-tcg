@@ -1,0 +1,1 @@
+export const PlayActorEffectType = "PLAY_ACTOR_EFFECT"

@@ -1,0 +1,1 @@
+export const SelectCardPromptType = "SELECT_CARD_PROMPT_TYPE"

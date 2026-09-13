@@ -1,0 +1,10 @@
+export enum Direction {
+  FOWARD,
+  FOWARD_RIGHT,
+  RIGHT,
+  BACKWARD_RIGHT,
+  BACKWARD,
+  BACKWARD_LEFT,
+  LEFT,
+  FOWARD_LEFT
+}

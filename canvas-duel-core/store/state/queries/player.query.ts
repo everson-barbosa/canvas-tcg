@@ -1,0 +1,12 @@
+import { State } from "../state";
+import { HandQuery } from "./hand.query";
+import { QueryBase } from "./query-base";
+
+export class PlayerQuery extends QueryBase {
+  hand: HandQuery
+
+  constructor(state: State) {
+    super(state)
+    this.hand = new HandQuery(state)
+  }
+}

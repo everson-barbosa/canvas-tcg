@@ -1,0 +1,14 @@
+{
+  "name": "canva-duel-core",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.20.2",
+    "@types/uuid": "^11.0.0",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "uuid": "^14.0.2"
+  }
+}

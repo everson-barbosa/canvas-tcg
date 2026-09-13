@@ -1,0 +1,1 @@
+export const UseIgnitionEffectActionType = "USE_IGNITION_ACTION"

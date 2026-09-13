@@ -1,0 +1,1 @@
+export const PlayActorActionType = "PLAY_ACTOR_ACTION"

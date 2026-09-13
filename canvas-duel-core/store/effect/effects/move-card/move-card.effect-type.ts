@@ -1,0 +1,1 @@
+export const MoveCardEffectType = "MOVE_CARD_EFFECT_TYPE"

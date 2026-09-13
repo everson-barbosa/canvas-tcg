@@ -1,0 +1,1 @@
+export const ChangeOrientationEffectType = "CHANGE_ORIENTATION_EFFECT"
