@@ -9,4 +9,8 @@ export class PlayerQuery extends QueryBase {
     super(state)
     this.hand = new HandQuery(state)
   }
+
+  getEnemy(playerId: string) {
+    return Object.values(this.state.players).find(player => player.id !== playerId)
+  }
 }

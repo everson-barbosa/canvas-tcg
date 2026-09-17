@@ -36,7 +36,7 @@ export interface IgnitionEffect extends EffectBase {
   }
   requirements?: {
     explanation: string
-    handler: () => void
+    handler: (effectCtx: IgnitionEffectCtx) => boolean
   }
 }
 

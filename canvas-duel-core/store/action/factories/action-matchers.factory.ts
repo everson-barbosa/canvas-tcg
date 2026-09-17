@@ -1,5 +1,5 @@
 import { ActionMatcher } from "../action.matcher"
-import { ActionMatchers } from "../action.matchers"
+import { ActionMatchers } from "../constants/action.matchers"
 
 export function factoryActionMatchers() {
   const matcher = new Map<string, ActionMatcher>()

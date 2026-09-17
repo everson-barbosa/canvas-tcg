@@ -1,4 +1,4 @@
-import { factoryPromptResolvers } from "./factories/factory-resolvers";
+import { factoryPromptResolvers } from "./factories/prompt-resolver.factory";
 import { Prompt } from "./prompt";
 
 export class PromptManager {
@@ -32,13 +32,17 @@ export class PromptManager {
       return
     }
 
+    try {
     const response = resolver.resolve(answer)
 
     const callback = this.callbacks.get(prompt.id)
 
-    if (callback) {
-      callback(response)
-      this.callbacks.delete(prompt.id)
+      if (callback) {
+        callback(response)
+        this.callbacks.delete(prompt.id)
+      }
+    } catch (error) {
+      console.error('Error on try to resolve prompt', error)
     }
   }
 } 

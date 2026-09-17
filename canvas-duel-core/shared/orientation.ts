@@ -4,3 +4,10 @@ export enum Orientation {
   SOUTH,
   EAST
 }
+
+export const Orientations = [
+  Orientation.NORTH, 
+  Orientation.EAST, 
+  Orientation.SOUTH, 
+  Orientation.WEST
+]

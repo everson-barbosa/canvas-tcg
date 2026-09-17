@@ -14,13 +14,17 @@ export class SelectCardPromptResolver extends PromptResolver<
   resolve(props: {
     prompt: SelectCardPrompt,
     answer: SelectCardPromptAnswer
-  }): SelectCardPromptResponse | null {
+  }): SelectCardPromptResponse {
     const { prompt, answer } = props
 
     const isCardAvailable = prompt.cardInstanceIds.includes(answer.cardInstanceId)
 
-    if (!isCardAvailable) return null
+    if (!isCardAvailable) {
+      throw new Error("Card is not available to select")
+    }
 
-    return answer.cardInstanceId
+    return {
+      cardInstanceId: answer.cardInstanceId
+    }
   }
 }

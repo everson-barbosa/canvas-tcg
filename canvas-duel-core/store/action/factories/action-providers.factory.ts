@@ -1,5 +1,5 @@
 import { ActionProvider } from "../action.provider"
-import { ActionProviders } from "../action.providers"
+import { ActionProviders } from "../constants/action.providers"
 
 export function factoryActionProviders() {
   const providers: ActionProvider[] = []

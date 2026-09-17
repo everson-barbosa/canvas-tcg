@@ -8,18 +8,49 @@ export enum CardType {
   DRAMA = "DRAMA"
 }
 
+export enum CardColor {
+  RED,
+  GREEN,
+  BLUE,
+  PURPLE,
+  YELLOW,
+  NEUTRAL
+}
+
+export enum CardArchetype {
+  HUMANI,
+  AVIAN,
+  MARINE,
+  BEAST,
+  AUTOMATA,
+  NATURE
+}
+
+export enum CardCost {
+  RED,
+  GREEN,
+  BLUE,
+  PURPLE,
+  YELLOW,
+  ANY
+}
+
 export interface BaseCard {
   id: string
   name: string
+  type: CardType
+  archetypes: CardArchetype[]
+  effects: Effect[]
 }
 
 export interface ActorCard extends BaseCard {
   type: CardType.ACTOR
+  color: CardColor
+  cost: CardCost[]
   vigor: number
   attack: number
   rotations: Rotation[]
   directions: Direction[]
-  effects: Effect[]
 }
 
 export interface SceneCard extends BaseCard {

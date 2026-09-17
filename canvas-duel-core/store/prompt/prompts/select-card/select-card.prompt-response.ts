@@ -1,1 +1,3 @@
-export type SelectCardPromptResponse = string | null
+export type SelectCardPromptResponse = {
+  cardInstanceId: string
+}

@@ -1,0 +1,1 @@
+export  const SelectOrientationPromptType = "SELECT_ORIENTATION_PROMPT"

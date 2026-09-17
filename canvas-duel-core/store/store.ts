@@ -1,3 +1,4 @@
+import { IgnitionEffect } from "../shared/cards/effect";
 import { ActionManager } from "./action/action.manager";
 import { Effect } from "./effect/effect";
 import { EffectManager } from "./effect/effect.manager";
