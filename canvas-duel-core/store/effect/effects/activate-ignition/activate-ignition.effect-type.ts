@@ -1,0 +1,1 @@
+export const ActivateIgnitionEffectType = "ACTIVATE_IGNITION_EFFECT_TYPE"

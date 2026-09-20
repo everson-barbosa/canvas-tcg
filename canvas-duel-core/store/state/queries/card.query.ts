@@ -1,3 +1,4 @@
+import { CardType } from "../../../shared/cards/card";
 import { QueryBase } from "./query-base";
 
 export class CardQuery extends QueryBase {
@@ -15,5 +16,15 @@ export class CardQuery extends QueryBase {
     return Object.values(this.state.cards).filter(card => 
       card.ownerId === ownerId
     )
+  }
+
+  getCostAmount(cardInstanceId: string): number {
+    const card = this.state.cards[cardInstanceId]
+
+    if (!card) return 0
+
+    if (card.definition.type !== CardType.ACTOR) return 0
+
+    return card.definition.cost.length
   }
 }

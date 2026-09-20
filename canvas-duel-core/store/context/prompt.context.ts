@@ -1,4 +1,4 @@
-import { Orientation, Orientations } from "../../shared/orientation";
+import { Orientation, Orientations } from "../../shared/cards/interfaces/orientation";
 import { SelectCardPrompt } from "../prompt/prompts/select-card/select-card.prompt";
 import { SelectCardPromptResponse } from "../prompt/prompts/select-card/select-card.prompt-response";
 import { SelectOrientationPrompt } from "../prompt/prompts/select-orientation/select-orientation.prompt";
@@ -19,7 +19,7 @@ export class PromptContext {
   }) {
     const { cardInstanceIds, ownerId, callback } = props
 
-    this.store.promptManager.push({
+    this.store.prompt.push({
       prompt: new SelectCardPrompt({
         cardInstanceIds,
         ownerId,
@@ -36,7 +36,7 @@ export class PromptContext {
     const { ownerId, callback } = props
     const orientations = props?.orientations ?? Orientations
 
-    this.store.promptManager.push({
+    this.store.prompt.push({
       prompt: new SelectOrientationPrompt({
         orientations,
         ownerId

@@ -1,4 +1,4 @@
-import { Orientation } from "../../../../shared/orientation";
+import { Orientation } from "../../../../shared/cards/interfaces/orientation";
 import { Prompt, PromptProps } from "../../prompt";
 import { SelectOrientationPromptType } from "./select-orientation.prompt-type";
 

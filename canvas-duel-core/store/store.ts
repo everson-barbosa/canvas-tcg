@@ -1,35 +1,45 @@
-import { IgnitionEffect } from "../shared/cards/effect";
 import { ActionManager } from "./action/action.manager";
 import { Effect } from "./effect/effect";
 import { EffectManager } from "./effect/effect.manager";
+import { EventManager } from "./event/event.manager";
 import { PromptManager } from "./prompt/prompt.manager";
 import { StateManager } from "./state/state.manager";
 
 export class Store {
-  stateManager: StateManager
-  effectManager: EffectManager
-  promptManager: PromptManager
-  actionManager: ActionManager
+  state: StateManager
+  effect: EffectManager
+  prompt: PromptManager
+  action: ActionManager
+  event: EventManager
 
   constructor() {
-    this.stateManager = new StateManager()
-    this.effectManager = new EffectManager()
-    this.promptManager = new PromptManager()
-    this.actionManager = new ActionManager()
+    this.state = new StateManager()
+    this.effect = new EffectManager()
+    this.prompt = new PromptManager()
+    this.action = new ActionManager()
+    this.event = new EventManager()
   }
 
   dispatch(effect: Effect) {
-    this.effectManager.enqueue(effect)
+    this.effect.enqueue(effect)
     this.run()
+  }
+
+  getActions() {
+    return this.action.getActions(this)
+  }
+
+  joinToGame() {
+    
   }
 
   private run() {
     while (
-      this.effectManager.hasEffect() && 
-      !this.promptManager.hasPrompts()) {
-        const effect = this.effectManager.dequeue()!
+      this.effect.hasEffect() && 
+      !this.prompt.hasPrompts()) {
+        const effect = this.effect.dequeue()!
 
-        this.effectManager.resolve(effect, this)
+        this.effect.resolve(effect, this)
     }
   }
 }

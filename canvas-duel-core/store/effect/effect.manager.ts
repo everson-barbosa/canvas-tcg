@@ -1,9 +1,10 @@
-import { IgnitionEffect } from "../../shared/cards/effect";
+import { IgnitionEffect } from "../../shared/cards/effects/effect";
 import { CardInstance } from "../state/entities/cards";
 import { Store } from "../store";
 import { Effect } from "./effect";
 import { factoryEffectResolvers } from "./factories/effect-resolvers.factory";
-import { factoryIgnitionEffectCtx } from "./factories/ignition-effect-ctx.factory";
+import { factoryIgnitionEffectExecute } from "./factories/ignition-effect-execute.factory";
+import { factoryIgnitionEffectRequirements } from "./factories/ignition-effect-requirements.factory";
 
 export class EffectManager {
   queue: Effect[] = [];
@@ -34,7 +35,7 @@ export class EffectManager {
   }) {
     const { cardInstance, effect, store } = props
 
-    effect.execute.handler(factoryIgnitionEffectCtx({
+    effect.execute.handler(factoryIgnitionEffectExecute({
       cardInstance,
       store
     }))
@@ -49,7 +50,7 @@ export class EffectManager {
 
     if (!effect?.requirements) return
 
-    return effect.requirements.handler(factoryIgnitionEffectCtx({
+    return effect.requirements.handler(factoryIgnitionEffectRequirements({
       cardInstance,
       store
     }))

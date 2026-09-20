@@ -1,4 +1,4 @@
-import { Position } from "../../../../shared/position";
+import { Position } from "../../../../shared/cards/interfaces/position";
 import { Effect } from "../../effect";
 import { MoveCardEffectType } from "./move-card.effect-type";
 

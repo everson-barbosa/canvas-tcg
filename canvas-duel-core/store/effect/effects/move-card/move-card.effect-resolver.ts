@@ -9,15 +9,15 @@ export class MoveCardEffectResolver extends EffectResolver<MoveCardEffect> {
   resolve(effect: MoveCardEffect, store: Store) {
     const { cardInstanceId, position } = effect.payload
 
-    const cardInBoard = store.stateManager.query.board.getCardByInstanceId(cardInstanceId)
+    const cardInBoard = store.state.query.board.getCardByInstanceId(cardInstanceId)
 
     if (!cardInBoard) return
 
-    const isPositionOccupied = store.stateManager.query.board.isPositionOccupied(position)
+    const isPositionOccupied = store.state.query.board.isPositionOccupied(position)
 
     if (isPositionOccupied) return
 
-    store.stateManager.command.board.changePosition({
+    store.state.command.board.changePosition({
       cardInBoard,
       position
     })

@@ -1,6 +1,5 @@
 import { ActionExecutor } from "../action.executor"
-import { ActionExecutors } from "../action.executors"
-
+import { ActionExecutors } from "../constants/action.executors"
 
 export function factoryActionExecutors() {
   const executors = new Map<string, ActionExecutor>()

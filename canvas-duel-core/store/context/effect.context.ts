@@ -1,11 +1,14 @@
 import { Store } from "../store"
-import { BoardEffectContext } from "./board-effect.context"
+import { BoardEffectContext } from "./effects/board-effect.context"
+import { HandEffectContext } from "./effects/hand-effect.context"
 
 export class EffectContext {
   board: BoardEffectContext
+  hand: HandEffectContext
   
   constructor(store: Store) {
     this.board = new BoardEffectContext(store)
+    this.hand = new HandEffectContext(store)
   }
 
 }

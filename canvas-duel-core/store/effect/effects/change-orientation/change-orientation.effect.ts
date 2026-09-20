@@ -1,4 +1,4 @@
-import { Orientation } from "../../../../shared/orientation"
+import { Orientation } from "../../../../shared/cards/interfaces/orientation"
 import { Effect } from "../../effect"
 import { ChangeOrientationEffectType } from "./change-orientation.effect-type"
 

@@ -1,4 +1,4 @@
-import { EffectType } from "../../../../shared/cards/effect";
+import { EffectType } from "../../../../shared/cards/effects/effect";
 import { Store } from "../../../store";
 import { ActionProvider } from "../../action.provider";
 import { UseIgnitionEffectAction } from "./use-ignition-effect.action";
@@ -6,7 +6,7 @@ import { UseIgnitionEffectAction } from "./use-ignition-effect.action";
 
 export class UseIgnitionEffectActionProvider extends ActionProvider<UseIgnitionEffectAction> {
   provide(store: Store): UseIgnitionEffectAction[] {
-    const { query } = store.stateManager
+    const { query } = store.state
 
     const actions: UseIgnitionEffectAction[] = []
 
@@ -22,7 +22,7 @@ export class UseIgnitionEffectActionProvider extends ActionProvider<UseIgnitionE
 
         if (!isIgnitionEffect) continue;
 
-        const canActivate = store.effectManager.canActivateIgnitionEffect({
+        const canActivate = store.effect.canActivateIgnitionEffect({
           cardInstance: card,
           effect,
           store

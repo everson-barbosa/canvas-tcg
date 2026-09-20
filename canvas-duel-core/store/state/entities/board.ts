@@ -1,5 +1,5 @@
-import { Orientation } from "../../../shared/orientation"
-import { Position } from "../../../shared/position"
+import { Orientation } from "../../../shared/cards/interfaces/orientation"
+import { Position } from "../../../shared/cards/interfaces/position"
 
 export enum Ailment {
   POISON,

@@ -9,7 +9,7 @@ export class UseIgnitionEffectActionExecutor extends ActionExecutor {
   type = UseIgnitionEffectActionType
 
   execute(action: UseIgnitionEffectAction, choice: UseIgnitionEffectActionChoice, store: Store): void {
-      const cardInstance = store.stateManager.query.card.getByInstanceId(
+      const cardInstance = store.state.query.card.getByInstanceId(
         action.cardInstanceId
       )
 

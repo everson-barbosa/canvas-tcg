@@ -1,7 +1,7 @@
-import { ActorCard, CardArchetype, CardColor, CardCost, CardType } from "../../shared/cards/card";
-import { EffectProperty, EffectType } from "../../shared/cards/effect";
-import { Direction } from "../../shared/direction";
-import { Rotation } from "../../shared/rotation";
+import { ActorCard, CardArchetype, CardColor, CardCost, CardType } from "../../../card";
+import { EffectProperty, EffectType } from "../../../effects/effect";
+import { Direction } from "../../../interfaces/direction";
+import { Rotation } from "../../../interfaces/rotation";
 
 export const RenownedKnight: ActorCard = {
   type: CardType.ACTOR,

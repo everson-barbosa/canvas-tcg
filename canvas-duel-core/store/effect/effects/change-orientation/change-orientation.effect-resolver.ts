@@ -10,11 +10,11 @@ export class ChangeOrientationEffectResolver extends EffectResolver<ChangeOrient
   resolve(effect: ChangeOrientationEffect, store: Store): void {
     const { cardInstanceId, orientation } = effect.payload
 
-    const cardInBoard = store.stateManager.query.board.getCardByInstanceId(cardInstanceId)
+    const cardInBoard = store.state.query.board.getCardByInstanceId(cardInstanceId)
 
     if (!cardInBoard) return
 
-    store.stateManager.command.board.changeOrientation({
+    store.state.command.board.changeOrientation({
       cardInBoard,
       orientation
     })

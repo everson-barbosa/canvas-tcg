@@ -1,0 +1,1 @@
+export const DrawCardEffectType = "DRAW_CARD_EFFECT"

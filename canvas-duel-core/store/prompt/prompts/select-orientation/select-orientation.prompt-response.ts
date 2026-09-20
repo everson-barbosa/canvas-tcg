@@ -1,4 +1,4 @@
-import { Orientation } from "../../../../shared/orientation"
+import { Orientation } from "../../../../shared/cards/interfaces/orientation"
 
 export type SelectOrientationPromptResponse = {
   orientation: Orientation

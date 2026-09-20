@@ -11,6 +11,6 @@ export class DuelContext {
   constructor(store: Store) {
     this.prompt = new PromptContext(store)
     this.effect = new EffectContext(store)
-    this.query = new Query(store.stateManager.state)
+    this.query = new Query(store.state.getState())
   }
 }

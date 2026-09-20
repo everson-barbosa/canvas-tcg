@@ -1,8 +1,9 @@
-import { Direction } from "../direction"
-import { Rotation } from "../rotation"
-import { Effect } from "./effect"
+import { Direction } from "./interfaces/direction"
+import { Rotation } from "./interfaces/rotation"
+import { Effect } from "./effects/effect"
 
 export enum CardType {
+  MAESTRO = "MAESTRO",
   ACTOR = "ACTOR",
   SCENE = "SCENE",
   DRAMA = "DRAMA"
@@ -39,14 +40,24 @@ export interface BaseCard {
   id: string
   name: string
   type: CardType
-  archetypes: CardArchetype[]
   effects: Effect[]
 }
 
 export interface ActorCard extends BaseCard {
   type: CardType.ACTOR
+  archetypes: CardArchetype[]
   color: CardColor
   cost: CardCost[]
+  vigor: number
+  attack: number
+  rotations: Rotation[]
+  directions: Direction[]
+}
+
+export interface MaestroCard extends BaseCard {
+  type: CardType.MAESTRO
+  archetypes: CardArchetype[]
+  color: CardColor
   vigor: number
   attack: number
   rotations: Rotation[]
@@ -61,4 +72,4 @@ export interface DramaCard extends BaseCard {
   type: CardType.DRAMA
 }
 
-export type Card = ActorCard | SceneCard | DramaCard
+export type Card = MaestroCard | ActorCard | SceneCard | DramaCard

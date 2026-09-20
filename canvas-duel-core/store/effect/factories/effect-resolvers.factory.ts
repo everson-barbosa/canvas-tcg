@@ -1,5 +1,5 @@
 import { EffectResolver } from "../effect.resolver"
-import { EffectResolvers } from "../effect.resolvers"
+import { EffectResolvers } from "../constants/effect.resolvers"
 
 export function factoryEffectResolvers() {
   const resolvers = new Map<string, EffectResolver>()

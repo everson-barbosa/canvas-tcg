@@ -1,4 +1,4 @@
-import { EffectType } from "../../../../shared/cards/effect";
+import { EffectType } from "../../../../shared/cards/effects/effect";
 import { Store } from "../../../store";
 import { EffectResolver } from "../../effect.resolver";
 import { ActivateIgnitionEffect } from "./activate-ignition.effect";
@@ -11,7 +11,7 @@ export class ActivateIgnitionEffectResolver extends EffectResolver<ActivateIgnit
   resolve(effect: ActivateIgnitionEffect, store: Store): void {
     const { cardInstanceId, effectIndex } = effect.payload
 
-    const cardInstance = store.stateManager.query.card.getByInstanceId(cardInstanceId)
+    const cardInstance = store.state.query.card.getByInstanceId(cardInstanceId)
     
     if (!cardInstance) return
 
@@ -21,11 +21,11 @@ export class ActivateIgnitionEffectResolver extends EffectResolver<ActivateIgnit
 
     if (thisEffect.type !== EffectType.IGNITION) return
 
-    const enemy = store.stateManager.query.player.getEnemy(cardInstance.ownerId)
+    const enemy = store.state.query.player.getEnemy(cardInstance.ownerId)
 
     if (!enemy) return
 
-    store.effectManager.activateIgnitionEffect({
+    store.effect.activateIgnitionEffect({
       cardInstance,
       effect: thisEffect,
       store
