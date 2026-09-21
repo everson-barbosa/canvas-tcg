@@ -1,7 +1,7 @@
-import { Direction } from "../../../interfaces/direction";
-import { Rotation } from "../../../interfaces/rotation";
-import { ActorCard, CardArchetype, CardColor, CardCost, CardType } from "../../../card";
-import { EffectProperty, EffectType } from "../../../effects/effect";
+import { Direction } from "../../../cards/interfaces/direction";
+import { Rotation } from "../../../cards/interfaces/rotation";
+import { ActorCard, CardArchetype, CardColor, CardCost, CardType } from "../../../cards/card";
+import { EffectType } from "../../../cards/effects/effect";
 
 export const Brainsucker: ActorCard = {
   type: CardType.ACTOR,
@@ -16,7 +16,6 @@ export const Brainsucker: ActorCard = {
   rotations: [Rotation.RIGHT, Rotation.LEFT],
   effects: [{
     type: EffectType.TRIGGER,
-    properties: [EffectProperty.IN_BOARD],
     event: "ACTOR_PLAYED",
     execute: {
       explanation: "Compre cartas igual ao custo do ACTOR jogado",

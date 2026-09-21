@@ -1,10 +1,13 @@
-import { IgnitionEffect } from "../../shared/cards/effects/effect";
+import { IgnitionEffect, TriggerEffect } from "../../shared/cards/effects/effect";
+import { DuelEvent } from "../event/event";
 import { CardInstance } from "../state/entities/cards";
 import { Store } from "../store";
 import { Effect } from "./effect";
 import { factoryEffectResolvers } from "./factories/effect-resolvers.factory";
 import { factoryIgnitionEffectExecute } from "./factories/ignition-effect-execute.factory";
 import { factoryIgnitionEffectRequirements } from "./factories/ignition-effect-requirements.factory";
+import { factoryTriggerEffectExecute } from "./factories/trigger-effect-execute.factory";
+import { factoryTriggerEffectRequirements } from "./factories/trigger-effect-requirements.factory";
 
 export class EffectManager {
   queue: Effect[] = [];
@@ -41,18 +44,50 @@ export class EffectManager {
     }))
   }
 
+  activateTriggerEffect(props: {
+    cardInstance: CardInstance
+    effect: IgnitionEffect
+    event: DuelEvent
+    store: Store
+  }) {
+    const { cardInstance, effect, event, store } = props
+
+    effect.execute.handler(factoryTriggerEffectExecute({
+      cardInstance,
+      event,
+      store
+    }))
+  }
+
   canActivateIgnitionEffect(props: {
     cardInstance: CardInstance
     effect: IgnitionEffect
     store: Store
-  }) {
+  }): boolean {
     const { cardInstance, effect, store } = props
 
-    if (!effect?.requirements) return
+    if (!effect?.requirements) return false
 
     return effect.requirements.handler(factoryIgnitionEffectRequirements({
       cardInstance,
       store
+    }))
+  }
+
+  canActivateTriggerEffect(props: {
+    cardInstance: CardInstance
+    effect: TriggerEffect
+    store: Store
+    event: DuelEvent
+  }): boolean {
+    const { cardInstance, effect, event, store } = props
+
+    if (!effect?.requirements) return false
+
+    return effect.requirements.handler(factoryTriggerEffectRequirements({
+      cardInstance,
+      store,
+      event
     }))
   }
 

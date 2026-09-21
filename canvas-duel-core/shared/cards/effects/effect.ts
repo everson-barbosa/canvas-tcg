@@ -8,16 +8,6 @@ import {
   TriggerEffectRequirementsContext 
 } from "./trigger.effect-context"
 
-export enum EffectProperty {
-  IN_BOARD,
-  IN_HAND,
-  IN_GRAVE,
-  ONCE_PER_TURN,
-  YOUR_TURN,
-  ENEMY_TURN,
-  DISCARD
-}
-
 export enum EffectType {
   TRIGGER,
   IGNITION,
@@ -25,7 +15,7 @@ export enum EffectType {
 }
 
 export interface EffectBase {
-  properties: EffectProperty[]
+  type: EffectType
 }
 
 export interface TriggerEffectDefinition<

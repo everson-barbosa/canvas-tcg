@@ -1,4 +1,4 @@
-import { Card } from "../card";
+import { Card } from "../cards/card";
 import { BetweenLands } from "./between-lands/between-lands.set";
 import { HunterDream } from "./hunter-dream/hunter-dream.set";
 

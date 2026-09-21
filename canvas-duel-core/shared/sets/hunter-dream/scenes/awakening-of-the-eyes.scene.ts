@@ -1,5 +1,5 @@
-import { CardType, SceneCard } from "../../../card";
-import { EffectProperty, EffectType } from "../../../effects/effect";
+import { CardType, SceneCard } from "../../../cards/card";
+import { EffectType } from "../../../cards/effects/effect";
 
 export const AwakeningOfTheEyes: SceneCard = {
   type: CardType.SCENE,
@@ -8,7 +8,6 @@ export const AwakeningOfTheEyes: SceneCard = {
   effects: [
     {
       type: EffectType.IGNITION,
-      properties: [EffectProperty.DISCARD],
       execute: {
         explanation: "Compre 2 cartas",
         handler: ({ duel, myId }) => {

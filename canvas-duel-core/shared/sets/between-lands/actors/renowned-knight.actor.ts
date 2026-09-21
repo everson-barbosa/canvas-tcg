@@ -1,7 +1,7 @@
-import { ActorCard, CardArchetype, CardColor, CardCost, CardType } from "../../../card";
-import { EffectProperty, EffectType } from "../../../effects/effect";
-import { Direction } from "../../../interfaces/direction";
-import { Rotation } from "../../../interfaces/rotation";
+import { ActorCard, CardArchetype, CardColor, CardCost, CardType } from "../../../cards/card";
+import { EffectType } from "../../../cards/effects/effect";
+import { Direction } from "../../../cards/interfaces/direction";
+import { Rotation } from "../../../cards/interfaces/rotation";
 
 export const RenownedKnight: ActorCard = {
   type: CardType.ACTOR,
@@ -17,7 +17,6 @@ export const RenownedKnight: ActorCard = {
   effects: [
     {
       type: EffectType.IGNITION,
-      properties: [EffectProperty.IN_BOARD, EffectProperty.ONCE_PER_TURN],
       execute: {
         explanation: "Selecione 1 carta no campo, selecione uma ORIENTATION e mude a ORIENTATION",
         handler: ({ duel, myId }) => {

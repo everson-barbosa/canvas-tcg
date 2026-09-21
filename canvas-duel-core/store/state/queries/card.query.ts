@@ -6,6 +6,10 @@ export class CardQuery extends QueryBase {
     return this.state.cards[cardInstanceId] ?? null
   }
 
+  list() {
+    return Object.values(this.state.cards)
+  }
+
   listByIds(cardInstanceIds: string[]) {
     return Object.values(this.state.cards).filter(card => 
       cardInstanceIds.includes(card.cardInstanceId)
