@@ -1,5 +1,5 @@
 import { ActorCard, CardArchetype, CardColor, CardCost, CardType } from "../../../cards/card";
-import { EffectType } from "../../../cards/effects/effect";
+import { EffectType } from "../../../cards/effects/effect-base";
 import { Direction } from "../../../cards/interfaces/direction";
 import { Rotation } from "../../../cards/interfaces/rotation";
 

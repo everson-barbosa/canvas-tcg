@@ -1,7 +1,7 @@
 import { Direction } from "../../../cards/interfaces/direction";
 import { Rotation } from "../../../cards/interfaces/rotation";
 import { ActorCard, CardArchetype, CardColor, CardCost, CardType } from "../../../cards/card";
-import { EffectType } from "../../../cards/effects/effect";
+import { EffectType } from "../../../cards/effects/effect-base";
 
 export const Brainsucker: ActorCard = {
   type: CardType.ACTOR,
@@ -16,25 +16,15 @@ export const Brainsucker: ActorCard = {
   rotations: [Rotation.RIGHT, Rotation.LEFT],
   effects: [{
     type: EffectType.TRIGGER,
-    event: "ACTOR_PLAYED",
+    event: "CHANGED_POSITION",
     execute: {
-      explanation: "Compre cartas igual ao custo do ACTOR jogado",
-      handler: ({ duel, event, myId }) => {
-        const costAmount = duel.query.card.getCostAmount(
-          event.payload.cardInstanceId
-        )
-
+      explanation: "Compre 1 carta",
+      handler: ({ duel, myId }) => {
         duel.effect.hand.draw({
           playerId: myId,
-          amount: costAmount
+          amount: 1
         })
       }
     },
-    requirements: {
-      explanation: "Se o ACTOR pertence ao adversário",
-      handler: ({ event, enemyId }) => {
-        return event.payload.ownerId ===  enemyId
-      },
-    }
   }]
 }

@@ -1,4 +1,5 @@
 import { DuelEventType } from "../../../store/event/event.map"
+import { EffectBase, EffectType } from "./effect-base"
 import { 
   IgnitionEffectExecuteContext, 
   IgnitionEffectRequirementsContext 
@@ -7,16 +8,6 @@ import {
   TriggerEffectExecuteContext, 
   TriggerEffectRequirementsContext 
 } from "./trigger.effect-context"
-
-export enum EffectType {
-  TRIGGER,
-  IGNITION,
-  MODIFIER
-}
-
-export interface EffectBase {
-  type: EffectType
-}
 
 export interface TriggerEffectDefinition<
   T extends DuelEventType

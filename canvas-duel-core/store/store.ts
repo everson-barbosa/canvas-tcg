@@ -1,5 +1,4 @@
 import { CardManager } from "../shared/cards/card.manager";
-import { EffectType } from "../shared/cards/effects/effect";
 import { ActionManager } from "./action/action.manager";
 import { Effect } from "./effect/effect";
 import { EffectManager } from "./effect/effect.manager";
@@ -8,6 +7,7 @@ import { EventManager } from "./event/event.manager";
 import { PromptManager } from "./prompt/prompt.manager";
 import { StateManager } from "./state/state.manager";
 import { DuelConfig, DuelStarter } from "./duel-starter";
+import { EffectType } from "../shared/cards/effects/effect-base";
 
 export class Store {
   state: StateManager
@@ -35,7 +35,7 @@ export class Store {
     return this.action.getActions(this)
   }
 
-  emit(event: DuelEvent) {
+  propagateEvent(event: DuelEvent) {
     const cards = this.state.query.card.list()
 
     for (const card of cards) {

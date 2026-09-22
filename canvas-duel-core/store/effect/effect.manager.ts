@@ -46,7 +46,7 @@ export class EffectManager {
 
   activateTriggerEffect(props: {
     cardInstance: CardInstance
-    effect: IgnitionEffect
+    effect: TriggerEffect
     event: DuelEvent
     store: Store
   }) {
