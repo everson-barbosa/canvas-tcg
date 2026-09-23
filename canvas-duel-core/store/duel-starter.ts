@@ -1,4 +1,5 @@
 import { Orientation } from "../shared/cards/interfaces/orientation"
+import { DuelStartedEvent } from "./event/events/duel-started/duel-started.event"
 import { Phase } from "./state/entities/phase"
 import { Store } from "./store"
 
@@ -39,5 +40,7 @@ export class DuelStarter {
         })
       }
     }
+
+    store.event.emit(new DuelStartedEvent(), store)
   }
 }

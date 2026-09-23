@@ -74,6 +74,8 @@ export class Store {
       !this.prompt.hasPrompts()) {
         const effect = this.effect.dequeue()!
 
+        console.log(effect.type)
+
         this.effect.resolve(effect, this)
     }
   }

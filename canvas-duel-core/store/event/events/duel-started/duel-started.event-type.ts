@@ -1,0 +1,1 @@
+export const DuelStartedEventType = "DUEL_STARTED_EVENT"

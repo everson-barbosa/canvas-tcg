@@ -1,5 +1,5 @@
 import { DuelEvent } from "../../../store/event/event";
-import { DeclaredAttackEvent } from "../../../store/event/events/declared-attack.event";
+import { DeclaredAttackEvent } from "../../../store/event/events/declared-attack/declared-attack.event";
 import { EffectBase, EffectType } from "./effect-base";
 import { TriggerEffectExecuteContext, TriggerEffectRequirementsContext } from './trigger.effect-context'
 

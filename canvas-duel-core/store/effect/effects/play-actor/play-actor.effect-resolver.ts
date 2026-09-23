@@ -1,4 +1,4 @@
-import { ActorPlayedEvent } from "../../../event/events/actor-played.event";
+import { ActorPlayedEvent } from "../../../event/events/actor-played/actor-played.event";
 import { Store } from "../../../store";
 import { EffectResolver } from "../../effect.resolver";
 import { PlayActorEffect } from "./play-actor.effect";

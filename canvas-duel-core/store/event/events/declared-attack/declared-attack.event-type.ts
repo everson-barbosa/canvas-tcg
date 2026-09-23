@@ -1,0 +1,1 @@
+export const DeclaredAttackEventType = "DECLARED_ATTACK_EVENT"

@@ -14,5 +14,6 @@ store.starter({
   activePlayerId: "player-1"
 })
 
-console.log({ actions: store.getActions() })
-console.log(Object.values(store.state.getState()))
+
+// console.log({ actions: store.getActions() })
+// console.log(Object.values(store.state.getState()))

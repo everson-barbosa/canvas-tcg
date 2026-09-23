@@ -1,0 +1,1 @@
+export const ChangedPositionEventType = "CHANGED_POSITION_EVENT"

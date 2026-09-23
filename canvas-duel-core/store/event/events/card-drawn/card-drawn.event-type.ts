@@ -1,0 +1,1 @@
+export const CardDrawnEventType = "CARD_DRAWN_EVENT"

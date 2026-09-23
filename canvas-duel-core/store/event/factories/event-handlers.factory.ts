@@ -2,12 +2,12 @@ import { EventHandlers } from "../constants/event.handlers"
 import { EventHandler } from "../event.handler"
 
 export function factoryEventHandlers() {
-  const handlers = new Map<string, EventHandler>()
+  const handlers: EventHandler[] = []
   
   EventHandlers.forEach(EventHandler => {
     const handler = new EventHandler()
   
-    handlers.set(handler.type, handler)
+    handlers.push(handler)
   })
 
   return handlers
