@@ -1,4 +1,4 @@
 export interface Turn  {
-  activePlayer: string | null
+  activePlayerId: string | null
   count: number
 }

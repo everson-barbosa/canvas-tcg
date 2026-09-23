@@ -7,7 +7,7 @@ export class PlayActorActionProvider extends ActionProvider<PlayActorAction> {
   provide(store: Store): PlayActorAction[] {
     const actions: PlayActorAction[] = []
 
-    const activePlayerId = store.state.query.turn.getActivePlayer()
+    const activePlayerId = store.state.query.turn.getActivePlayerId()
 
     if (!activePlayerId) return actions
 

@@ -1,3 +1,7 @@
+export enum EffectProperty {
+  ONCE_PER_TURN,
+}
+
 export enum EffectType {
   TRIGGER,
   IGNITION,
@@ -6,4 +10,5 @@ export enum EffectType {
 
 export interface EffectBase {
   type: EffectType
+  properties?: EffectProperty[]
 }

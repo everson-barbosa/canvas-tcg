@@ -1,4 +1,4 @@
-import { EffectType } from "../../../../shared/cards/effects/effect";
+import { EffectType } from "../../../../shared/cards/effects/effect-base";
 import { Store } from "../../../store";
 import { ActionProvider } from "../../action.provider";
 import { UseIgnitionEffectAction } from "./use-ignition-effect.action";
@@ -10,11 +10,11 @@ export class UseIgnitionEffectActionProvider extends ActionProvider<UseIgnitionE
 
     const actions: UseIgnitionEffectAction[] = []
 
-    const activePlayer = query.turn.getActivePlayer()
+    const activePlayerId = query.turn.getActivePlayerId()
 
-    if (!activePlayer) return actions
+    if (!activePlayerId) return actions
 
-    const cards = query.card.listByOwnerId(activePlayer)
+    const cards = query.card.listByOwnerId(activePlayerId)
 
     for (const card of cards) {
       for (const [effectIndex, effect] of Object.entries(card.definition.effects)) {
@@ -32,7 +32,7 @@ export class UseIgnitionEffectActionProvider extends ActionProvider<UseIgnitionE
 
         actions.push(
           new UseIgnitionEffectAction({
-            ownerId: activePlayer,
+            ownerId: activePlayerId,
             cardInstanceId: card.cardInstanceId,
             effectIndex: Number(effectIndex)
           })

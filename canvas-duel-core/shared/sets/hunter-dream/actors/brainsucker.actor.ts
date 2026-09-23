@@ -1,7 +1,7 @@
 import { Direction } from "../../../cards/interfaces/direction";
 import { Rotation } from "../../../cards/interfaces/rotation";
 import { ActorCard, CardArchetype, CardColor, CardCost, CardType } from "../../../cards/card";
-import { EffectType } from "../../../cards/effects/effect-base";
+import { EffectProperty, EffectType } from "../../../cards/effects/effect-base";
 
 export const Brainsucker: ActorCard = {
   type: CardType.ACTOR,
@@ -17,6 +17,7 @@ export const Brainsucker: ActorCard = {
   effects: [{
     type: EffectType.TRIGGER,
     event: "CHANGED_POSITION",
+    properties: [EffectProperty.ONCE_PER_TURN],
     execute: {
       explanation: "Compre 1 carta",
       handler: ({ duel, myId }) => {
