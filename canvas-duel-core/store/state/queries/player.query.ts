@@ -11,6 +11,10 @@ export class PlayerQuery extends QueryBase {
   }
 
   getEnemy(playerId: string) {
-    return Object.values(this.state.players).find(player => player.id !== playerId)
+    return Object.values(this.state.players).find(player => player.id !== playerId) ?? null
+  }
+
+  list() {
+    return Object.values(this.state.players)
   }
 }

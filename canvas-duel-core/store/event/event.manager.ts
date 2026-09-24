@@ -7,8 +7,6 @@ export class EventManager {
 
   emit(event: DuelEvent, store: Store) {
     for (const handler of this.handlers) {
-      console.log(handler, event)
-
       if (handler.type === event.type) {
         handler.handle(event, store)
       }

@@ -41,6 +41,6 @@ export class DuelStarter {
       }
     }
 
-    store.event.emit(new DuelStartedEvent(), store)
+    store.propagateEvent(new DuelStartedEvent())
   }
 }

@@ -2,7 +2,7 @@ import { DuelEvent } from "../../event";
 import { CardDrawnEventType } from "./card-drawn.event-type";
 
 interface CardDrawnEventPayload {
-  cardIds: string
+  cardIds: string[]
   ownerId: string
 }
 

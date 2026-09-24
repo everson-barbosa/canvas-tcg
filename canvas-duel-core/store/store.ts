@@ -59,6 +59,8 @@ export class Store {
         })
       }
     }
+
+    this.event.emit(event, this)
   }
 
   starter(config: DuelConfig) {
@@ -74,7 +76,7 @@ export class Store {
       !this.prompt.hasPrompts()) {
         const effect = this.effect.dequeue()!
 
-        console.log(effect.type)
+        console.log(effect)
 
         this.effect.resolve(effect, this)
     }

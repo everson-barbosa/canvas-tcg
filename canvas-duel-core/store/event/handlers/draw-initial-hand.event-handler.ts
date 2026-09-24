@@ -10,22 +10,14 @@ export class DrawInitialHandEventHandler extends EventHandler<DuelStartedEvent> 
   type = DuelStartedEventType
 
   handle(event: DuelStartedEvent, store: Store): void {
-    const activePlayerId = store.state.query.turn.getActivePlayerId()!
+    for (const player of store.state.query.player.list()) {
+      store.dispatch(
+        new DrawCardEffect({
+          amount: INITIAL_HAND,
+          playerId: player.id
+        })
+      )
+    }
 
-    store.dispatch(
-      new DrawCardEffect({
-         amount: INITIAL_HAND,
-         playerId: activePlayerId
-      })
-    )
-
-    const enemy = store.state.query.player.getEnemy(activePlayerId)!
-
-    store.dispatch(
-      new DrawCardEffect({
-        amount: INITIAL_HAND,
-        playerId: enemy.id
-      })
-    )
   }
 }
