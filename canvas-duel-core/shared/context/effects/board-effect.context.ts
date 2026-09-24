@@ -1,6 +1,6 @@
-import { Orientation } from "../../../shared/cards/interfaces/orientation"
-import { ChangeOrientationEffect } from "../../effect/effects/change-orientation/change-orientation.effect"
-import { Store } from "../../store"
+import { ChangeOrientationEffect } from "../../../store/effect/effects/change-orientation/change-orientation.effect"
+import { Store } from "../../../store/store"
+import { Orientation } from "../../cards/interfaces/orientation"
 
 export class BoardEffectContext {
   private store: Store

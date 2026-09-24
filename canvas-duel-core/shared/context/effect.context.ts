@@ -1,4 +1,4 @@
-import { Store } from "../store"
+import { Store } from "../../store/store"
 import { BoardEffectContext } from "./effects/board-effect.context"
 import { HandEffectContext } from "./effects/hand-effect.context"
 

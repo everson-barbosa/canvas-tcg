@@ -1,5 +1,5 @@
+import { Sets } from "../../sets/sets";
 import { Card } from "./card";
-import { Sets } from "../sets/sets";
 
 export class CardManager {
   registry: Map<string, Card>

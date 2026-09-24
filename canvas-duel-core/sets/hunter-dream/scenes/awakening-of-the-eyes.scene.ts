@@ -1,5 +1,5 @@
-import { CardType, SceneCard } from "../../../cards/card";
-import { EffectType } from "../../../cards/effects/effect-base";
+import { CardType, SceneCard } from "../../../shared/cards/card"
+import { EffectType } from "../../../shared/cards/effects/effect-base"
 
 export const AwakeningOfTheEyes: SceneCard = {
   type: CardType.SCENE,

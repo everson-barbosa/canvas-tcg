@@ -1,3 +1,4 @@
+import { shuffle } from "../../../shared/helpers/shuffle";
 import { CommandBase } from "./command-base";
 
 export class DeckCommand extends CommandBase {
@@ -15,5 +16,13 @@ export class DeckCommand extends CommandBase {
     }
 
     return cardIds
+  }
+
+  shuffle(playerId: string) {
+    const player = this.state.players[playerId]
+
+    if (!player) return []
+
+    return shuffle(player.deck)
   }
 }

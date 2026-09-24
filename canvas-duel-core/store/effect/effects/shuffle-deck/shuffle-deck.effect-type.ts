@@ -1,0 +1,1 @@
+export const ShuffleDeckEffectType = "SHUFFLE_DECK_EFFECT"

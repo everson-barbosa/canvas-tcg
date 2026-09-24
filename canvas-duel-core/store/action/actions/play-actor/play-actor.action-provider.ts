@@ -27,14 +27,19 @@ export class PlayActorActionProvider extends ActionProvider<PlayActorAction> {
         const availablePositions = 
           store.state.query.board.getAvailablePositionsByPlayerId(activePlayerId)
 
-        actions.push(
-          new PlayActorAction({
-            ownerId: card.ownerId,
-            cardInstanceId: card.cardInstanceId,
-            availableOrientations,
-            availablePositions
-          })
-        )
+        const hasAvailableOrientations = availableOrientations.length > 0
+        const hasAvailablePositions = availablePositions.length > 0
+
+        if (hasAvailableOrientations && hasAvailablePositions) {
+          actions.push(
+            new PlayActorAction({
+              ownerId: card.ownerId,
+              cardInstanceId: card.cardInstanceId,
+              availableOrientations,
+              availablePositions
+            })
+          )
+        }
       }
     })
 

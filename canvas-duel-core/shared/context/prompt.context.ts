@@ -1,9 +1,10 @@
-import { Orientation, Orientations } from "../../shared/cards/interfaces/orientation";
-import { SelectCardPrompt } from "../prompt/prompts/select-card/select-card.prompt";
-import { SelectCardPromptResponse } from "../prompt/prompts/select-card/select-card.prompt-response";
-import { SelectOrientationPrompt } from "../prompt/prompts/select-orientation/select-orientation.prompt";
-import { SelectOrientationPromptResponse } from "../prompt/prompts/select-orientation/select-orientation.prompt-response";
-import { Store } from "../store";
+import { SelectCardPrompt } from "../../store/prompt/prompts/select-card/select-card.prompt"
+import { SelectCardPromptResponse } from "../../store/prompt/prompts/select-card/select-card.prompt-response"
+import { SelectOrientationPrompt } from "../../store/prompt/prompts/select-orientation/select-orientation.prompt"
+import { SelectOrientationPromptResponse } from "../../store/prompt/prompts/select-orientation/select-orientation.prompt-response"
+import { Store } from "../../store/store"
+import { Orientation, Orientations } from "../cards/interfaces/orientation"
+
 
 export class PromptContext {
   private store: Store

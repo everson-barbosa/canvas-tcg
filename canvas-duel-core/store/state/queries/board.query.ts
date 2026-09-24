@@ -37,6 +37,9 @@ export class BoardQuery extends QueryBase {
   }
 
   getAvailablePositionsByPlayerId(playerId: string): Position[] {
-    return []
+    return [{
+      x: 1,
+      y: 1
+    }]
   }
 }

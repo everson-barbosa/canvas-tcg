@@ -1,5 +1,6 @@
-import { Query } from "../state/queries/query";
-import { Store } from "../store";
+
+import { Query } from "../../store/state/queries/query";
+import { Store } from "../../store/store";
 import { EffectContext } from "./effect.context";
 import { PromptContext } from "./prompt.context";
 
@@ -14,3 +15,4 @@ export class DuelContext {
     this.query = new Query(store.state.getState())
   }
 }
+

@@ -3,6 +3,7 @@ import { ChangeOrientationEffectResolver } from "../effects/change-orientation/c
 import { DrawCardEffectResolver } from "../effects/draw-card/draw-card-effect-resolver";
 import { MoveCardEffectResolver } from "../effects/move-card/move-card.effect-resolver";
 import { PlayActorEffectResolver } from "../effects/play-actor/play-actor.effect-resolver";
+import { ShuffleDeckEffectResolver } from "../effects/shuffle-deck/shuffle-deck.effect-resolver";
 
 export const EffectResolvers = [
   ActivateIgnitionEffectResolver,
@@ -10,4 +11,5 @@ export const EffectResolvers = [
   DrawCardEffectResolver,
   PlayActorEffectResolver,
   MoveCardEffectResolver,
+  ShuffleDeckEffectResolver
 ]

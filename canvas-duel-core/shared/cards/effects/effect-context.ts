@@ -1,5 +1,5 @@
-import { DuelContext } from "../../../store/context/duel.context"
 import { Query } from "../../../store/state/queries/query"
+import { DuelContext } from "../../context/duel.context"
 
 export interface EffectExecuteContext {
   duel: DuelContext

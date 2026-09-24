@@ -1,7 +1,8 @@
-import { Direction } from "../../../cards/interfaces/direction";
-import { Rotation } from "../../../cards/interfaces/rotation";
-import { ActorCard, CardArchetype, CardColor, CardCost, CardType } from "../../../cards/card";
-import { EffectProperty, EffectType } from "../../../cards/effects/effect-base";
+import { ActorCard, CardArchetype, CardColor, CardCost, CardType } from "../../../shared/cards/card"
+import { EffectProperty, EffectType } from "../../../shared/cards/effects/effect-base"
+import { Direction } from "../../../shared/cards/interfaces/direction"
+import { Rotation } from "../../../shared/cards/interfaces/rotation"
+
 
 export const Brainsucker: ActorCard = {
   type: CardType.ACTOR,

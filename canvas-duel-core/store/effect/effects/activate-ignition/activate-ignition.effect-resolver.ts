@@ -1,4 +1,4 @@
-import { EffectType } from "../../../../shared/cards/effects/effect";
+import { EffectType } from "../../../../shared/cards/effects/effect-base";
 import { Store } from "../../../store";
 import { EffectResolver } from "../../effect.resolver";
 import { ActivateIgnitionEffect } from "./activate-ignition.effect";

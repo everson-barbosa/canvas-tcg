@@ -8,11 +8,17 @@ store.starter({
       { cardId: "brainsucker" },
       { cardId: "brainsucker" },
       { cardId: "brainsucker" },
+      { cardId: "renowned-knight" },
+      { cardId: "renowned-knight" },
+      { cardId: "renowned-knight" }
     ],  },
     { id: 'player-2', deck: [
       { cardId: "brainsucker" },
       { cardId: "brainsucker" },
       { cardId: "brainsucker" },
+      { cardId: "renowned-knight" },
+      { cardId: "renowned-knight" },
+      { cardId: "renowned-knight" }
     ] },
   ],
   activePlayerId: "player-1"

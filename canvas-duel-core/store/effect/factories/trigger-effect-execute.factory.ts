@@ -1,5 +1,5 @@
 import { TriggerEffectExecuteContext } from "../../../shared/cards/effects/trigger.effect-context";
-import { factoryDuelContext } from "../../context/factories/duel-context.factory";
+import { factoryDuelContext } from "../../../shared/context/factories/duel-context.factory";
 import { DuelEvent } from "../../event/event";
 import { CardInstance } from "../../state/entities/cards";
 import { Store } from "../../store";
