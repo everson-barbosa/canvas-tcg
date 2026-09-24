@@ -7,7 +7,7 @@ export class DeckCommand extends CommandBase {
     if (!player) return []
 
     const deck = player.deck
-    const cardIds = deck.splice(amount)
+    const cardIds = deck.splice(-amount)
 
     this.state.players[playerId] = {
       ...player,

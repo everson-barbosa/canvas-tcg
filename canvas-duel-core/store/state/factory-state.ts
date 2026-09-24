@@ -3,16 +3,17 @@ import { State } from "./state";
 
 export function factoryState(): State {
   return {
-    players: {},
+    attacks: {},
     board: {
       cards: {},
       blockedPositions: []
     },
     cards: {},
     phase: Phase.IDLE,
+    players: {},
     turn: {
       count: 0,
-      activePlayer: null
+      activePlayerId: null
     }
   }
 }

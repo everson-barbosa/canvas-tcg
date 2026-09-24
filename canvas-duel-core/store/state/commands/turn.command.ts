@@ -2,6 +2,6 @@ import { CommandBase } from "./command-base";
 
 export class TurnCommand extends CommandBase {
   setPlayer(activePlayer: string) {
-    this.state.turn.activePlayer = activePlayer
+    this.state.turn.activePlayerId = activePlayer
   }
 }

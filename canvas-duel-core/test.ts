@@ -9,11 +9,15 @@ store.starter({
       { cardId: "brainsucker" },
       { cardId: "brainsucker" },
     ],  },
-    { id: 'player-2', deck: [] },
+    { id: 'player-2', deck: [
+      { cardId: "brainsucker" },
+      { cardId: "brainsucker" },
+      { cardId: "brainsucker" },
+    ] },
   ],
   activePlayerId: "player-1"
 })
 
 
-// console.log({ actions: store.getActions() })
+console.log({ actions: store.getActions() })
 // console.log(Object.values(store.state.getState()))
