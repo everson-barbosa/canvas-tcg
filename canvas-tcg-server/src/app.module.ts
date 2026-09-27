@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { DuelModule } from './infra/duel.module.js';
+import { DuelModule } from './infra/duel/duel.module';
 
 @Module({
   imports: [DuelModule],

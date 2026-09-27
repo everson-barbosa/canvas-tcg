@@ -1,4 +1,4 @@
-import { Store } from "../core/store/store.js";
+import { Store } from "../../core/store/store.js";
 
 export class DuelDto {
   id: string
