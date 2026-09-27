@@ -21,7 +21,7 @@ export class PlayActorEffectResolver extends EffectResolver<PlayActorEffect> {
       position
     })
 
-    store.propagateEvent(
+    store.engine.propagateEvent(
       new ActorPlayedEvent({
         cardInstanceId,
         ownerId,

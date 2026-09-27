@@ -14,7 +14,7 @@ export interface DuelConfig {
   activePlayerId: string
 }
 
-export class DuelStarter {
+export class StoreStarter {
   static start(props: {
     config: DuelConfig
     store: Store
@@ -48,6 +48,6 @@ export class DuelStarter {
       })
     }
 
-    store.propagateEvent(new DuelStartedEvent())
+    store.engine.propagateEvent(new DuelStartedEvent())
   }
 }

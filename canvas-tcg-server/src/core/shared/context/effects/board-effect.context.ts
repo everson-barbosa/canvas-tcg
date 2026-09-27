@@ -15,7 +15,7 @@ export class BoardEffectContext {
   }) {
     const { cardInstanceId, orientation } = props
 
-    this.store.dispatch(
+    this.store.engine.dispatch(
       new ChangeOrientationEffect({
         cardInstanceId,
         orientation,

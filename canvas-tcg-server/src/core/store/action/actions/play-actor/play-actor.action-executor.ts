@@ -9,7 +9,7 @@ export class PlayActorActionExecutor extends ActionExecutor {
   type = PlayActorActionType
 
   execute(action: PlayActorAction, choice: PlayActorActionChoice, store: Store): void {
-      store.dispatch(
+      store.engine.dispatch(
         new PlayActorEffect({
           cardInstanceId: choice.payload.cardInstanceId,
           ownerId: action.ownerId,

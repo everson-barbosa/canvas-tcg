@@ -15,7 +15,7 @@ export class DrawCardEffectResolver extends EffectResolver<DrawCardEffect> {
     )
     store.state.command.player.hand.add(effect.payload.playerId, cardIds)
 
-    store.propagateEvent(
+    store.engine.propagateEvent(
       new CardDrawnEvent({
         cardIds,
         ownerId: effect.payload.playerId

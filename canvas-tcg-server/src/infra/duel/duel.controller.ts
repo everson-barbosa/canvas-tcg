@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from "@nestjs/common";
+import { Body, Controller, Get, NotFoundException, Post } from "@nestjs/common";
 import { DuelService } from "./duel.service";
 import { CreateDuelDto } from "./create-duel.dto";
 
@@ -6,7 +6,7 @@ import { CreateDuelDto } from "./create-duel.dto";
 export class DuelController {
   constructor(private duelService: DuelService) {}
 
-  @Post("duel:create")
+  @Post("duels:create")
   async create(@Body() body: CreateDuelDto) {
     console.log(body)
 
@@ -16,6 +16,18 @@ export class DuelController {
     })
   }
 
-  @Get("duel:in-progress")
-  getDuelInProgress() {}
+  @Get("duels:active")
+  async getDuel() {
+    const playerId = "player-1" // Mock
+
+    const duel = await this.duelService.getByParticipantId(playerId)
+
+    if (!duel) {
+      throw new NotFoundException("Duel not found")
+    }
+
+    return duel
+  }
+
+
 }

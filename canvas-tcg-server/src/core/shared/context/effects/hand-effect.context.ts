@@ -15,7 +15,7 @@ export class HandEffectContext {
   }) {
     const { playerId, amount } = props
 
-    this.store.dispatch(
+    this.store.engine.dispatch(
       new DrawCardEffect({
         playerId,
         amount

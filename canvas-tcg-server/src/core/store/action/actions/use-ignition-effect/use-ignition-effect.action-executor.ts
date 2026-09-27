@@ -19,7 +19,7 @@ export class UseIgnitionEffectActionExecutor extends ActionExecutor {
 
       if (!effect) return
 
-      store.dispatch(
+      store.engine.dispatch(
         new ActivateIgnitionEffect({
           cardInstanceId: action.cardInstanceId,
           effectIndex: choice.payload.effectIndex

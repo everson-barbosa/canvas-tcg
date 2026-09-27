@@ -1,6 +1,6 @@
 ###
 
-POST http://localhost:3000/duel:create HTTP/1.1
+POST http://localhost:3000/duels:create HTTP/1.1
 content-type: application/json
 
 {
@@ -20,3 +20,7 @@ content-type: application/json
     }
   ]
 }
+
+### 
+GET http://localhost:3000/duels:active HTTP/1.1
+content-type: application/json

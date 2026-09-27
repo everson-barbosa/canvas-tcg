@@ -12,13 +12,13 @@ export class DrawInitialHandEventHandler extends EventHandler<DuelStartedEvent> 
 
   handle(event: DuelStartedEvent, store: Store): void {
     for (const player of store.state.query.player.list()) {
-      store.dispatch(
+      store.engine.dispatch(
         new ShuffleDeckEffect({
           playerId: player.id
         })
       )
 
-      store.dispatch(
+      store.engine.dispatch(
         new DrawCardEffect({
           amount: INITIAL_HAND,
           playerId: player.id
